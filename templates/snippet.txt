@@ -1,0 +1,26 @@
+			<select class="form-control" name="category">
+				<option value="0">Choose Category</option>
+                <?php foreach($categories as $category): ?>
+                	<?php if($d->category_id == $category->id) : ?>
+                		<option value="<?php echo $category->id; ?>" selected><?php echo $category->name; ?></option>
+					<?php else: ?>
+						<option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
+					<?php endif; ?>          
+                <?php endforeach; ?>
+			</select>
+
+
+
+
+		<br><h4>Activities</h4><br>
+		<?php foreach($activities as $activity): ?>
+      	<div class="row marketing">
+	        <div class="col-md-10">
+	          <h4><?php echo $activity->name; ?></h4>
+	          <p><?php echo $activity->description; ?></p>     
+	        </div>
+	        <div class="col-md-2">
+	        		<a class="btn btn-default" href="job.php?id=<?php echo $place->id; ?>">View</a>
+	        </div>
+        </div>  
+        <?php endforeach; ?> 
